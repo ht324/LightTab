@@ -1,0 +1,224 @@
+div[data-ltc-tab]:not([data-ltc-rendered=true]){
+	display:none;
+}
+.ltc-tab .ltc-tab-list-wrapper {
+	position:relative;
+	width:100%;
+	margin:0 0 -1px 0;
+	z-index:1;
+}
+.ltc-tab .ltc-tab-list-container {
+	overflow: hidden;
+    position: relative;
+    height: 42px;
+}
+.ltc-tab:not([data-theme*=single]) .ltc-tab-list-container {
+	border-radius: 5px 5px 0 0;
+}
+.ltc-tab[data-theme*=single] .ltc-tab-list-container {
+	border-radius: 2px 2px 0 0;
+}
+.ltc-tab .ltc-tab-list{
+	padding:0;
+	margin:0;
+	list-style:none;
+	white-space: nowrap;
+}
+.ltc-tab .ltc-tab-list li {
+	display:inline-block;
+	cursor:pointer;
+}
+.ltc-tab[data-theme*=light] .ltc-tab-list li {
+	border-bottom:1px solid #CCC;
+	border-right:1px solid #CCC;
+	border-top:1px solid #CCC;
+	background-image:-moz-linear-gradient(90deg, #e6e6e6 0%, #f6f6f6 100%);
+	background-image:-webkit-linear-gradient(90deg, #e6e6e6 0%, #f6f6f6 100%);
+	background-image:-ms-linear-gradient(90deg, #e6e6e6 0%, #f6f6f6 100%);
+	backgroun-color:#e6e6e6;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6e6e6', endColorstr='#f6f6f6',GradientType=0);
+}
+.ltc-tab[data-theme*=dark] .ltc-tab-list li {
+	border-bottom:1px solid #343434;
+	border-right:1px solid #343434;
+	border-top:1px solid #343434;
+	background-color: #343434;
+}
+.ltc-tab .ltc-tab-list li:first-child {
+	border-radius:5px 0 0 0;
+}
+.ltc-tab[data-theme*=light] .ltc-tab-list li:first-child {
+	border-left:1px solid #CCC;
+}
+.ltc-tab[data-theme*=dark] .ltc-tab-list li:first-child {
+	border-left:1px solid #343434;
+}
+.ltc-tab .ltc-tab-list li:last-child {border-radius:0 5px 0 0;}
+.ltc-tab .ltc-tab-list li:only-of-type {border-radius:5px 5px 0 0;}
+.ltc-tab[data-theme*=single] .ltc-tab-list li {
+	margin-right: 1px;
+	border-radius:2px 2px 0 0;
+	font-size:16px;
+}
+
+.ltc-tab[data-theme*=light] .ltc-tab-list li:not(.selected):hover {
+	background-image: -moz-linear-gradient(90deg, #CCC 0%, #DDD 100%);
+	background-image: -webkit-linear-gradient(90deg, #CCC 0%, #DDD 100%);
+	background-image: -ms-linear-gradient(90deg, #CCC 0%, #DDD 100%);
+	background-color:#CCC;
+}
+.ltc-tab[data-theme*=light] .ltc-tab-list li.selected {
+	border-bottom-color:#FFF;
+	background: #fff;
+}
+.ltc-tab[data-theme*=dark] .ltc-tab-list li.selected {
+	border-color:#444444;
+	background-color: #444444;
+}
+.ltc-tab .ltc-tab-list li a {
+	padding: 0 0.4em;
+	display: block;
+	vertical-align: middle;
+	text-align: center;
+	margin: 0;
+	font-weight:normal;
+	text-decoration: none;
+	line-height: 40px;
+	width:120px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.ltc-tab[data-theme*=light] .ltc-tab-list li a {
+	color:#555;
+}
+.ltc-tab[data-theme*=dark] .ltc-tab-list li a {
+	color:#b0b0b0;
+}
+.ltc-tab .ltc-tab-list li.selected a {
+	cursor: default;
+}
+.ltc-tab[data-theme*=stress] .ltc-tab-list li.selected a {
+	font-size:1.1em;
+	font-weight:bold;
+}
+.ltc-tab[data-theme*=dark] .ltc-tab-list li.selected a {
+	color: #f5690a;
+}
+.ltc-tab.show-arrow .ltc-tab-list{
+	/*margin-left: 39px;*/ /* TODO */
+	-webkit-transition: left 300ms;
+	transition: left 300ms;
+	position: absolute;
+    left: 0px;
+}
+.ltc-tab:not([data-theme*=single]).show-arrow .ltc-tab-list li {
+	border-radius: 0;
+}
+.ltc-tab .ltc-tab-arrow {
+	display:none;
+	position:absolute;
+	top:0;
+	width: 40px;  /* TODO */
+    height: 100%;
+    cursor: pointer;
+}
+.ltc-tab[data-theme*=dark] .ltc-tab-arrow {
+	width: 30px;
+}
+.ltc-tab[data-theme*=light] .ltc-tab-arrow {
+	border:1px solid #CCC;
+    background-image:-moz-linear-gradient(90deg, #e6e6e6 0%, #f6f6f6 100%);
+	background-image:-webkit-linear-gradient(90deg, #e6e6e6 0%, #f6f6f6 100%);
+	background-image:-ms-linear-gradient(90deg, #e6e6e6 0%, #f6f6f6 100%);
+	background-color:#e6e6e6;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e6e6e6', endColorstr='#f6f6f6',GradientType=0);
+}
+.ltc-tab[data-theme*=dark] .ltc-tab-arrow {
+	border:1px solid #2a2a2a;
+	background-color:#2a2a2a;
+}
+.ltc-tab.show-arrow .ltc-tab-arrow{
+	display:block;
+}
+.ltc-tab[data-theme*=light] .ltc-tab-arrow:hover {
+	background-image:-moz-linear-gradient(90deg, #CCC 0%, #f6f6f6 100%);
+	background-image:-webkit-linear-gradient(90deg, #CCC 0%, #f6f6f6 100%);
+	background-image:-ms-linear-gradient(90deg, #CCC 0%, #f6f6f6 100%);
+	background-color:#CCC;
+}
+.ltc-tab .ltc-tab-arrow.left {
+	box-shadow:2px 0px 1px rgba(0,0,0,.06);
+	border-top-left-radius:5px;
+	left:0;
+}
+.ltc-tab .ltc-tab-arrow.right {
+	box-shadow:-2px 0px 1px rgba(0,0,0,.06);
+	border-top-right-radius:5px;
+	right:0;
+}
+.ltc-tab[data-theme*=single] .ltc-tab-arrow.left {
+	border-top-left-radius:2px;
+	border-right-color: #000000;
+}
+.ltc-tab[data-theme*=single] .ltc-tab-arrow.right {
+	border-top-right-radius:2px;
+	border-left-color: #000000;
+}
+.ltc-tab .ltc-tab-arrow.edge {
+	box-shadow: none;
+	cursor: default;
+}
+.ltc-tab .ltc-tab-arrow:after{
+	content:"";
+	border-style: solid;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	display: block;
+	position: absolute;
+	margin:auto;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	_filter: progid:DXImageTransform.Microsoft.Chroma(color='#ffffff');
+}
+.ltc-tab[data-theme*=light] .ltc-tab-arrow.left:after{
+	border-width: 6px 6px 6px 0;
+	border-color: transparent #000000 transparent transparent;
+	_border-color: #ffffff #000000 #ffffff #ffffff;
+}
+.ltc-tab[data-theme*=light] .ltc-tab-arrow.right:after{
+	border-width: 6px 0 6px 6px;
+	border-color: transparent transparent transparent #000000;
+	_border-color: #ffffff #ffffff #ffffff #000000;
+}
+.ltc-tab[data-theme*=dark] .ltc-tab-arrow.left:after{
+	border-width: 8px 10px 8px 0;
+	border-color: transparent #cecece transparent transparent;
+	_border-color: #ffffff #cecece #ffffff #ffffff;
+}
+.ltc-tab[data-theme*=dark] .ltc-tab-arrow.right:after{
+	border-width: 8px 0 8px 10px;
+	border-color: transparent transparent transparent #cecece;
+	_border-color: #ffffff #ffffff #ffffff #cecece;
+}
+.ltc-tab .ltc-tab-arrow.edge:after{
+	opacity:.25;
+}
+.ltc-tab .ltc-tab-content-container{
+	position: relative;
+	overflow: hidden;
+}
+.ltc-tab[data-theme*=light] .ltc-tab-content-container{
+    border: 1px solid #CCC;
+    background-color: #FFF;
+}
+.ltc-tab[data-theme*=dark] .ltc-tab-content-container{
+    border: 1px solid #444444;
+	background-color: #444444;
+}
+.ltc-tab .ltc-tab-content-container > div:not(.selected){
+	display: none;
+}
